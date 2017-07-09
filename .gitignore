@@ -14,5 +14,5 @@
 !/tmp/.keep
 
 .byebug_history
-/config/secrets.yml
 .editorconfig
+.env
