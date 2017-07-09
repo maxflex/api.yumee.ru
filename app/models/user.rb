@@ -10,7 +10,6 @@ class User < ApplicationRecord
     phone = Helpers.to_phone(request.params['auth']['phone'])
     code = request.params['auth']['code']
     sms_code = Rails.cache.read("yumee:codes:#{phone}")
-    logger.debug(code.to_s + ' | ' + sms_code.to_s + ' | ' + phone.to_s)
     if code.to_s == sms_code.to_s
       return self.find_or_create_by(phone: phone)
     end
