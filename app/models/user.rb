@@ -2,7 +2,7 @@ class User < ApplicationRecord
   belongs_to :address, optional: true
   belongs_to :plan, optional: true
 
-  def authenticate(code)
+  def authenticate
     true
   end
 

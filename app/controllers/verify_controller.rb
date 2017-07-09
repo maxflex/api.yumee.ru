@@ -13,5 +13,4 @@ class VerifyController < ApplicationController
     end
   end
 
-
 end
