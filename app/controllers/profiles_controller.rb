@@ -15,8 +15,8 @@ class ProfilesController < ApplicationController
   private
 
   def user_params
-    user_params = params.permit(:name, :phone, :preferences, :plan_id, :age, :height, :weight,
-      address: [:street, :building, :corpus, :stroenie, :flat, :lat, :lng],
+    user_params = params.permit(:name, :preferences, :plan_id, :age, :height, :weight,
+      address: [:street, :building, :corpus, :stroenie, :flat, :lat, :lng, :domofon, :comment, :floor],
     )
     user_params[:address_attributes] = user_params.delete(:address) if user_params.has_key?(:address)
     user_params.permit!

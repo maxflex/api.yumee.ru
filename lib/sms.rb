@@ -4,10 +4,10 @@ module SMS
   def self.send(phone, text)
     params = {
       api_id: Rails.application.secrets.sms_api_key,
-      to: Helpers.to_phone(phone),
-      msg: text,
-      # from: 'Yumee',
-      json: 1
+      to:     Helpers.to_phone(phone),
+      msg:    text,
+      from:   'Yumee',
+      json:    1
     }
     open('https://sms.ru/sms/send?' + params.to_query).read
   end
