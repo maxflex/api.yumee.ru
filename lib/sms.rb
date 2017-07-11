@@ -6,7 +6,7 @@ module SMS
       api_id: Rails.application.secrets.sms_api_key,
       to: Helpers.to_phone(phone),
       msg: text,
-      from: 'Yumee',
+      # from: 'Yumee',
       json: 1
     }
     open('https://sms.ru/sms/send?' + params.to_query).read
