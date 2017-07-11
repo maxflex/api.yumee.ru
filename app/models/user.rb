@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   belongs_to :address, optional: true
   belongs_to :plan, optional: true
+  accepts_nested_attributes_for :address, reject_if: :all_blank, allow_destroy: true
 
   def authenticate(code)
     true
@@ -14,5 +15,4 @@ class User < ApplicationRecord
       return self.find_or_create_by(phone: phone)
     end
   end
-
 end

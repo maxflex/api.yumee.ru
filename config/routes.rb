@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
+  resource 'profile', only: [:show, :update]
+
   # Phone verification
-  get 'verify' => 'verify#verify'
+  post 'verify' => 'verify#verify'
 
   resources 'plans', only: [:index]
   post 'token' => 'user_token#create'
